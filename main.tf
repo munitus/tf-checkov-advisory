@@ -1,9 +1,10 @@
 terraform {
   required_version = ">= 1.9"
   backend "s3" {
-    bucket = "advisory-state"
-    key    = "advisory.tfstate"
-    region = "eu-west-1"
+    bucket  = "advisory-state"
+    key     = "advisory.tfstate"
+    region  = "eu-west-1"
+    encrypt = true
   }
 }
 provider "aws" { region = "eu-west-1" }
